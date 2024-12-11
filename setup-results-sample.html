@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>setup-results-sample</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="setup-results-sample_files/libs/clipboard/clipboard.min.js"></script>
+<script src="setup-results-sample_files/libs/quarto-html/quarto.js"></script>
+<script src="setup-results-sample_files/libs/quarto-html/popper.min.js"></script>
+<script src="setup-results-sample_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="setup-results-sample_files/libs/quarto-html/anchor.min.js"></script>
+<link href="setup-results-sample_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="setup-results-sample_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="setup-results-sample_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="setup-results-sample_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="setup-results-sample_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">setup-results-sample</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'data.table' was built under R version 4.4.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.4.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:data.table':
+
+    between, first, last</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.4.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lfe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lfe' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Matrix</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'Matrix'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:tidyr':
+
+    expand, pack, unpack</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fixest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'fixest' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'fixest'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:lfe':
+
+    fepois</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Please cite as: </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code> Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code> R package version 5.2.3. https://CRAN.R-project.org/package=stargazer </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'gridExtra' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'gridExtra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    combine</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lmtest' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: zoo</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'zoo' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'zoo'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:data.table':
+
+    yearmon, yearqtr</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lmtest'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:lfe':
+
+    waldtest</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simplermarkdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'simplermarkdown' was built under R version 4.4.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DescTools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'DescTools' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'DescTools'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:data.table':
+
+    %like%</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringr' was built under R version 4.4.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'lubridate'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:data.table':
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week,
+    yday, year</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.4.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'purrr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:data.table':
+
+    transpose</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Control Variables</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>hmda <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/hmda_county_year.rds'</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>hmda <span class="ot">&lt;-</span> hmda <span class="sc">%&gt;%</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(countycode) <span class="sc">%&gt;%</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(countycode,year) <span class="sc">%&gt;%</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_total_mortgage_amt =</span> <span class="fu">lag</span>(total_mortgage_amt),</span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_total_mortgage_count =</span> <span class="fu">lag</span>(total_mortgage_count),</span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">hmda_mtg_amt_gr =</span> (total_mortgage_amt<span class="sc">-</span>lag_total_mortgage_amt)<span class="sc">/</span>lag_total_mortgage_amt,</span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">hmda_mtg_count_gr =</span> (total_mortgage_count<span class="sc">-</span>lag_total_mortgage_count)<span class="sc">/</span>lag_total_mortgage_count,</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_hmda_mtg_amt_gr =</span> <span class="fu">lag</span>(hmda_mtg_amt_gr)<span class="sc">*</span><span class="dv">100</span>,</span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_hmda_mtg_count_gr =</span> <span class="fu">lag</span>(hmda_mtg_count_gr)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> data.table <span class="sc">%&gt;%</span></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(countycode,year,lag_hmda_mtg_amt_gr,lag_hmda_mtg_count_gr)</span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a>hmda <span class="ot">&lt;-</span> hmda[<span class="sc">!</span><span class="fu">is.na</span>(lag_hmda_mtg_amt_gr)]</span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>county_gdp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/county_yr_gdp_gr.rds'</span>)</span>
+<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> county_gdp[year<span class="sc">==</span><span class="dv">2022</span>]</span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>temp[,year<span class="sc">:</span><span class="er">=</span><span class="dv">2023</span>]</span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>county_gdp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(county_gdp,temp)</span>
+<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a><span class="fu">setnames</span>(county_gdp,<span class="st">"county_gdp_gr"</span>,<span class="st">"lag_county_gdp_gr"</span>)</span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>cra <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">list.files</span>(<span class="at">path=</span><span class="st">"data/cra-aggr/"</span>,<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.rds$"</span>,<span class="at">full.names =</span> T),readRDS)</span>
+<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>cra <span class="ot">&lt;-</span> <span class="fu">rbindlist</span>(cra,<span class="at">fill=</span>T)</span>
+<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a><span class="fu">setnames</span>(cra,<span class="st">"Activity_Year"</span>,<span class="st">"year"</span>)</span>
+<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a>cra <span class="ot">&lt;-</span> cra <span class="sc">%&gt;%</span></span>
+<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(county_code) <span class="sc">%&gt;%</span></span>
+<span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(county_code,year) <span class="sc">%&gt;%</span></span>
+<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_loan_amount_amt_lt_1m =</span> <span class="fu">lag</span>(loan_amount_amt_lt_1m),</span>
+<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">cra_loan_amount_amt_lt_1m_gr =</span> (loan_amount_amt_lt_1m<span class="sc">-</span>lag_loan_amount_amt_lt_1m)<span class="sc">/</span>lag_loan_amount_amt_lt_1m,</span>
+<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_cra_loan_amount_amt_lt_1m_gr =</span> <span class="fu">lag</span>(cra_loan_amount_amt_lt_1m_gr)<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> data.table <span class="sc">%&gt;%</span></span>
+<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county_code,year,lag_cra_loan_amount_amt_lt_1m_gr)</span>
+<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a>cra <span class="ot">&lt;-</span> cra[<span class="sc">!</span><span class="fu">is.na</span>(lag_cra_loan_amount_amt_lt_1m_gr)]</span>
+<span id="cb56-42"><a href="#cb56-42" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> cra[year<span class="sc">==</span><span class="dv">2022</span>]</span>
+<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a>temp[,year<span class="sc">:</span><span class="er">=</span><span class="dv">2023</span>]</span>
+<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a>cra <span class="ot">&lt;-</span> <span class="fu">rbind</span>(cra,temp)</span>
+<span id="cb56-45"><a href="#cb56-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-46"><a href="#cb56-46" aria-hidden="true" tabindex="-1"></a><span class="co"># zipcode business patterns</span></span>
+<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a>zbp <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">list.files</span>(<span class="at">path=</span><span class="st">"data/zbp/"</span>,<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.rds$"</span>,<span class="at">full.names =</span> T),readRDS)</span>
+<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a>zbp <span class="ot">&lt;-</span> <span class="fu">rbindlist</span>(zbp,<span class="at">fill=</span>T)</span>
+<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a><span class="fu">setnames</span>(zbp,<span class="fu">c</span>(<span class="st">"ZIP"</span>,<span class="st">"Year"</span>),<span class="fu">c</span>(<span class="st">"zip"</span>,<span class="st">"year"</span>))</span>
+<span id="cb56-50"><a href="#cb56-50" aria-hidden="true" tabindex="-1"></a>zbp <span class="ot">&lt;-</span> zbp <span class="sc">%&gt;%</span></span>
+<span id="cb56-51"><a href="#cb56-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(zip) <span class="sc">%&gt;%</span></span>
+<span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(zip,year) <span class="sc">%&gt;%</span></span>
+<span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb56-54"><a href="#cb56-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_EST =</span> <span class="fu">lag</span>(EST),</span>
+<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">establishments_gr =</span> (EST<span class="sc">-</span>lag_EST)<span class="sc">/</span>lag_EST,</span>
+<span id="cb56-56"><a href="#cb56-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_payroll =</span> <span class="fu">lag</span>(AP),</span>
+<span id="cb56-57"><a href="#cb56-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">payroll_gr =</span> (AP<span class="sc">-</span>lag_payroll)<span class="sc">/</span>lag_payroll</span>
+<span id="cb56-58"><a href="#cb56-58" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> data.table <span class="sc">%&gt;%</span></span>
+<span id="cb56-59"><a href="#cb56-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(zip,year,establishments_gr,payroll_gr)</span>
+<span id="cb56-60"><a href="#cb56-60" aria-hidden="true" tabindex="-1"></a>zbp <span class="ot">&lt;-</span> zbp[<span class="sc">!</span><span class="fu">is.na</span>(establishments_gr) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(payroll_gr)]</span>
+<span id="cb56-61"><a href="#cb56-61" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> zbp[year<span class="sc">==</span><span class="dv">2022</span>]</span>
+<span id="cb56-62"><a href="#cb56-62" aria-hidden="true" tabindex="-1"></a>temp[,year<span class="sc">:</span><span class="er">=</span><span class="dv">2023</span>]</span>
+<span id="cb56-63"><a href="#cb56-63" aria-hidden="true" tabindex="-1"></a>zbp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(zbp,temp)</span>
+<span id="cb56-64"><a href="#cb56-64" aria-hidden="true" tabindex="-1"></a>control_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"establishments_gr"</span>,<span class="st">"payroll_gr"</span>)</span>
+<span id="cb56-65"><a href="#cb56-65" aria-hidden="true" tabindex="-1"></a>zbp[,(control_vars)<span class="sc">:</span><span class="er">=</span><span class="fu">lapply</span>(.SD, <span class="cf">function</span>(x) <span class="fu">Winsorize</span>(x, <span class="fu">quantile</span>(x, <span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))),.SDcols <span class="ot">=</span> control_vars]</span>
+<span id="cb56-66"><a href="#cb56-66" aria-hidden="true" tabindex="-1"></a>zbp[,zip<span class="sc">:</span><span class="er">=</span><span class="fu">str_pad</span>(zip,<span class="dv">5</span>,<span class="st">"left"</span>,<span class="st">"0"</span>)]</span>
+<span id="cb56-67"><a href="#cb56-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-68"><a href="#cb56-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-69"><a href="#cb56-69" aria-hidden="true" tabindex="-1"></a>control_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(hmda,county_gdp,<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"countycode"</span>,<span class="st">"year"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"county_code"</span>,<span class="st">"year"</span>),<span class="at">all.x=</span>T)</span>
+<span id="cb56-70"><a href="#cb56-70" aria-hidden="true" tabindex="-1"></a>control_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(control_df,cra,<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"countycode"</span>,<span class="st">"year"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"county_code"</span>,<span class="st">"year"</span>),<span class="at">all.x=</span>T)</span>
+<span id="cb56-71"><a href="#cb56-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-72"><a href="#cb56-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-73"><a href="#cb56-73" aria-hidden="true" tabindex="-1"></a>control_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"lag_hmda_mtg_amt_gr"</span>,<span class="st">"lag_hmda_mtg_count_gr"</span>,<span class="st">"lag_county_gdp_gr"</span>,<span class="st">"lag_cra_loan_amount_amt_lt_1m_gr"</span>)</span>
+<span id="cb56-74"><a href="#cb56-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-75"><a href="#cb56-75" aria-hidden="true" tabindex="-1"></a>control_df[,(control_vars)<span class="sc">:</span><span class="er">=</span><span class="fu">lapply</span>(.SD, <span class="cf">function</span>(x) <span class="fu">Winsorize</span>(x, <span class="fu">quantile</span>(x, <span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>))),.SDcols <span class="ot">=</span> control_vars]</span>
+<span id="cb56-76"><a href="#cb56-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-77"><a href="#cb56-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-78"><a href="#cb56-78" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.ers.usda.gov/data-products/rural-urban-commuting-area-codes/</span></span>
+<span id="cb56-79"><a href="#cb56-79" aria-hidden="true" tabindex="-1"></a>ruca <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">'data/RUCA2010zipcode.csv'</span>)</span>
+<span id="cb56-80"><a href="#cb56-80" aria-hidden="true" tabindex="-1"></a>ruca <span class="ot">&lt;-</span> ruca[,<span class="fu">c</span>(<span class="st">"ZIP_CODE"</span>,<span class="st">"RUCA1"</span>)]</span>
+<span id="cb56-81"><a href="#cb56-81" aria-hidden="true" tabindex="-1"></a>ruca[,ZIP_CODE<span class="sc">:</span><span class="er">=</span><span class="fu">str_pad</span>(ZIP_CODE,<span class="dv">5</span>,<span class="st">"left"</span>,<span class="st">"0"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zip demo variables</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>irs <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/irs_data.rds'</span>)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> irs[year<span class="sc">==</span><span class="dv">2021</span>]</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>temp[,year<span class="sc">:</span><span class="er">=</span><span class="dv">2022</span>]</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>irs <span class="ot">&lt;-</span> <span class="fu">rbind</span>(irs,temp)</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>irs[,year<span class="sc">:</span><span class="er">=</span>year<span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>zip_vars <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/acs_data_2010_2022_zip.rds'</span>)</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>zip_vars <span class="ot">&lt;-</span> <span class="fu">data.table</span>(zip_vars)</span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>zip_vars[,yr<span class="sc">:</span><span class="er">=</span>yr<span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>zip_vars <span class="ot">&lt;-</span> <span class="fu">merge</span>(zip_vars,irs,<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"zip"</span>,<span class="st">"yr"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"zipcode"</span>,<span class="st">"year"</span>),<span class="at">all.x=</span>T)</span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>zip_vars <span class="ot">&lt;-</span> zip_vars[median_income<span class="sc">&gt;</span><span class="dv">0</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(median_income) <span class="sc">&amp;</span> median_age<span class="sc">&gt;</span><span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>bank_chars <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/sod-bank-chars-1987-2024.rds'</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>bank_chars[, bank_assets <span class="sc">:</span><span class="er">=</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">""</span>, ASSET))]</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'large_bank_rssd_100b'</span>]] <span class="ot">&lt;-</span> <span class="fu">unique</span>(bank_chars[bank_assets<span class="sc">&gt;</span><span class="fl">100e6</span> <span class="sc">&amp;</span> YEAR <span class="sc">%in%</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2023</span>]<span class="sc">$</span>RSSDID)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'small_bank_rssd_100b'</span>]] <span class="ot">&lt;-</span> <span class="fu">unique</span>(bank_chars[bank_assets<span class="sc">&lt;=</span><span class="fl">100e6</span> <span class="sc">&amp;</span> YEAR <span class="sc">%in%</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2023</span>]<span class="sc">$</span>RSSDID)</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'large_bank_rssd_50b'</span>]] <span class="ot">&lt;-</span> <span class="fu">unique</span>(bank_chars[bank_assets<span class="sc">&gt;</span><span class="fl">50e6</span> <span class="sc">&amp;</span> YEAR <span class="sc">%in%</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2023</span>]<span class="sc">$</span>RSSDID)</span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'small_bank_rssd_50b'</span>]] <span class="ot">&lt;-</span> <span class="fu">unique</span>(bank_chars[bank_assets<span class="sc">&lt;=</span><span class="fl">50e6</span> <span class="sc">&amp;</span> YEAR <span class="sc">%in%</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2023</span>]<span class="sc">$</span>RSSDID)</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'large_bank_rssd_10b'</span>]] <span class="ot">&lt;-</span> <span class="fu">unique</span>(bank_chars[bank_assets<span class="sc">&gt;</span><span class="fl">10e6</span> <span class="sc">&amp;</span> YEAR <span class="sc">%in%</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2023</span>]<span class="sc">$</span>RSSDID)</span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'small_bank_rssd_10b'</span>]] <span class="ot">&lt;-</span> <span class="fu">unique</span>(bank_chars[bank_assets<span class="sc">&lt;=</span><span class="fl">10e6</span> <span class="sc">&amp;</span> YEAR <span class="sc">%in%</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2023</span>]<span class="sc">$</span>RSSDID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>branch_year <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/sod-branch-year-1987-2024.rds'</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>branch_year <span class="ot">&lt;-</span> branch_year[RSSDID <span class="sc">%in%</span> bank_chars<span class="sc">$</span>RSSDID]</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>branch_year[,active_in_2012<span class="sc">:</span><span class="er">=</span> <span class="fu">ifelse</span>(UNINUMBR <span class="sc">%in%</span> <span class="fu">unique</span>(branch_year[YEAR<span class="sc">==</span><span class="dv">2012</span>]<span class="sc">$</span>UNINUMBR),<span class="dv">1</span>,<span class="dv">0</span>)]</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>branch_year <span class="ot">&lt;-</span> branch_year[active_in_2012<span class="sc">==</span><span class="dv">1</span> <span class="sc">&amp;</span> YEAR<span class="sc">&gt;=</span><span class="dv">2011</span>]</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>branch_year <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_year,bank_chars[,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"RSSDHCR"</span>,<span class="st">"YEAR"</span>,<span class="st">"bank_assets"</span>)],<span class="at">by=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"YEAR"</span>))</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>branch_chars <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/sod-branch-chars-1987-2024.rds'</span>)</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>branch_year <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_year,branch_chars[,<span class="fu">c</span>(<span class="st">"UNINUMBR"</span>,<span class="st">"STCNTYBR"</span>,<span class="st">"ZIPBR"</span>)],<span class="at">by=</span><span class="fu">c</span>(<span class="st">"UNINUMBR"</span>),<span class="at">all.x=</span>T)</span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="fu">setnames</span>(branch_year,<span class="fu">c</span>(<span class="st">"ZIPBR"</span>,<span class="st">"YEAR"</span>),<span class="fu">c</span>(<span class="st">"zip"</span>,<span class="st">"yr"</span>))</span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>branch_year[,zip<span class="sc">:</span><span class="er">=</span><span class="fu">str_pad</span>(zip,<span class="dv">5</span>,<span class="st">"left"</span>,<span class="st">"0"</span>)]</span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>branch_year[,STCNTYBR<span class="sc">:</span><span class="er">=</span><span class="fu">str_pad</span>(STCNTYBR,<span class="dv">5</span>,<span class="st">"left"</span>,<span class="st">"0"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bank-level HHI</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co">#DSS2021 p1136</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>hhi <span class="ot">&lt;-</span> branch_year[,.(<span class="at">deposits =</span> <span class="fu">sum</span>(DEPSUMBR,<span class="at">na.rm=</span>T)),by<span class="ot">=</span>.(RSSDID,STCNTYBR,yr)]</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>hhi[,total_deposits<span class="sc">:</span><span class="er">=</span><span class="fu">sum</span>(deposits,<span class="at">na.rm =</span> T),by<span class="ot">=</span>.(STCNTYBR,yr)]</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>hhi[,deposit_share<span class="sc">:</span><span class="er">=</span>deposits<span class="sc">/</span>total_deposits]</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>hhi[,deposit_share<span class="sc">:</span><span class="er">=</span>deposit_share<span class="sc">*</span>deposit_share]</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>hhi <span class="ot">&lt;-</span> hhi[,.(<span class="at">deposits_state_hhi=</span><span class="fu">sum</span>(deposit_share)),by<span class="ot">=</span>.(STCNTYBR,yr)]</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>bank_hhi <span class="ot">&lt;-</span> branch_year[,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"STCNTYBR"</span>,<span class="st">"yr"</span>)]</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>bank_hhi <span class="ot">&lt;-</span> <span class="fu">data.table</span>(bank_hhi)</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>bank_hhi <span class="ot">&lt;-</span> bank_hhi[,.(<span class="at">no_branches=</span>.N),by<span class="ot">=</span>.(RSSDID,STCNTYBR,yr)]</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>bank_hhi <span class="ot">&lt;-</span> bank_hhi[<span class="sc">!</span><span class="fu">duplicated</span>(bank_hhi[,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"STCNTYBR"</span>,<span class="st">"yr"</span>)])]</span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>bank_hhi <span class="ot">&lt;-</span> <span class="fu">merge</span>(bank_hhi,hhi,<span class="at">by=</span><span class="fu">c</span>(<span class="st">"STCNTYBR"</span>,<span class="st">"yr"</span>))</span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>bank_hhi[,total_branches<span class="sc">:</span><span class="er">=</span>.N,by<span class="ot">=</span>.(RSSDID,yr)]</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>bank_hhi[,w_hhi<span class="sc">:</span><span class="er">=</span>no_branches<span class="sc">*</span>deposits_state_hhi]</span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>hhi <span class="ot">&lt;-</span> bank_hhi[,.(<span class="at">sum_w_hhi=</span><span class="fu">sum</span>(w_hhi),<span class="at">no_branches=</span><span class="fu">median</span>(total_branches)),by<span class="ot">=</span>.(RSSDID,yr)]</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a>hhi[,bank_hhi<span class="sc">:</span><span class="er">=</span>sum_w_hhi<span class="sc">/</span>no_branches]</span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a>hhi_bank_level <span class="ot">&lt;-</span> hhi[,<span class="fu">c</span>(<span class="st">"bank_hhi"</span>,<span class="st">"RSSDID"</span>,<span class="st">"yr"</span>)]</span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a>hhi_bank_level <span class="ot">&lt;-</span> <span class="fu">merge</span>(hhi_bank_level,bank_chars[,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"bank_assets"</span>,<span class="st">"YEAR"</span>)],</span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a>                        <span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"yr"</span>),</span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a>                        <span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"YEAR"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>closure_data <span class="ot">&lt;-</span> branch_year <span class="sc">%&gt;%</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>                <span class="fu">arrange</span>(UNINUMBR,yr) <span class="sc">%&gt;%</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>                <span class="fu">group_by</span>(UNINUMBR) <span class="sc">%&gt;%</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>                <span class="fu">mutate</span>(</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">lag1_bhc =</span> <span class="fu">lag</span>(RSSDHCR,<span class="dv">1</span>),</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">lag1_bank =</span> <span class="fu">lag</span>(RSSDID,<span class="dv">1</span>),</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">lag3_bank =</span> <span class="fu">lag</span>(RSSDID,<span class="dv">3</span>),</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">merged_1_year =</span> <span class="fu">ifelse</span>(RSSDID <span class="sc">!=</span>lag1_bank ,<span class="dv">1</span>,<span class="dv">0</span>), <span class="co"># or RSSDHCR !=lag1_bhc</span></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">merged_2_year =</span> <span class="fu">lag</span>(merged_1_year,<span class="dv">1</span>),</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">merged_3_year =</span> <span class="fu">lag</span>(merged_1_year,<span class="dv">2</span>),</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">merged_last_3_yrs =</span> <span class="fu">ifelse</span>(merged_1_year<span class="sc">==</span><span class="dv">1</span> <span class="sc">|</span> merged_2_year<span class="sc">==</span><span class="dv">1</span> <span class="sc">|</span> merged_3_year<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">next_year =</span> <span class="fu">lead</span>(yr),</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">closed =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(next_year) <span class="sc">&amp;</span> yr<span class="sc">&lt;</span><span class="dv">2024</span>,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">lag_branch_deposit_amount =</span> <span class="fu">lag</span>(DEPSUMBR),</span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">lag_branch_deposit_amount_3yr =</span> <span class="fu">lag</span>(DEPSUMBR,<span class="dv">3</span>),</span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">deposit_gr_3yrs =</span> lag_branch_deposit_amount<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>lag_branch_deposit_amount_3yr,</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">legacy_branch =</span> <span class="fu">ifelse</span>(lag3_bank<span class="sc">==</span>RSSDID,<span class="dv">1</span>,<span class="dv">0</span>),</span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">keep =</span> <span class="fu">lag</span>(<span class="fu">cumsum</span>(closed <span class="sc">==</span> <span class="dv">1</span>),<span class="at">default=</span><span class="dv">0</span>)<span class="sc">&lt;=</span><span class="dv">0</span> <span class="co"># no prior closed==1 based on cumulative history</span></span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a>                ) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(keep) <span class="sc">%&gt;%</span></span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a>                <span class="fu">select</span>(<span class="sc">-</span>keep,<span class="sc">-</span>lag_branch_deposit_amount_3yr) <span class="sc">%&gt;%</span></span>
+<span id="cb61-21"><a href="#cb61-21" aria-hidden="true" tabindex="-1"></a>                <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="fu">data.table</span>()</span>
+<span id="cb61-22"><a href="#cb61-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-23"><a href="#cb61-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-24"><a href="#cb61-24" aria-hidden="true" tabindex="-1"></a><span class="co"># test case i=390484</span></span>
+<span id="cb61-25"><a href="#cb61-25" aria-hidden="true" tabindex="-1"></a>merged_branches <span class="ot">&lt;-</span> <span class="fu">which</span>(closure_data<span class="sc">$</span>merged_1_year<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb61-26"><a href="#cb61-26" aria-hidden="true" tabindex="-1"></a>closure_data[,same_zip_prior_branches<span class="sc">:</span><span class="er">=</span><span class="dv">0</span>]</span>
+<span id="cb61-27"><a href="#cb61-27" aria-hidden="true" tabindex="-1"></a>pb <span class="ot">&lt;-</span> <span class="fu">txtProgressBar</span>(<span class="at">min=</span><span class="dv">0</span>,<span class="at">max=</span><span class="fu">length</span>(merged_branches),<span class="at">style =</span> <span class="dv">3</span>)</span>
+<span id="cb61-28"><a href="#cb61-28" aria-hidden="true" tabindex="-1"></a>count <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb61-29"><a href="#cb61-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> merged_branches) {</span>
+<span id="cb61-30"><a href="#cb61-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-31"><a href="#cb61-31" aria-hidden="true" tabindex="-1"></a>  count<span class="ot">=</span>count<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb61-32"><a href="#cb61-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setTxtProgressBar</span>(pb,count)</span>
+<span id="cb61-33"><a href="#cb61-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-34"><a href="#cb61-34" aria-hidden="true" tabindex="-1"></a>  temp <span class="ot">&lt;-</span> closure_data[  yr<span class="sc">&lt;=</span>(closure_data[i,]<span class="sc">$</span>yr<span class="dv">-1</span>) <span class="sc">&amp;</span> yr<span class="sc">&gt;=</span>(closure_data[i,]<span class="sc">$</span>yr<span class="dv">-3</span>) <span class="sc">&amp;</span></span>
+<span id="cb61-35"><a href="#cb61-35" aria-hidden="true" tabindex="-1"></a>                         zip<span class="sc">==</span>closure_data[i,]<span class="sc">$</span>zip <span class="sc">&amp;</span></span>
+<span id="cb61-36"><a href="#cb61-36" aria-hidden="true" tabindex="-1"></a>                         ( (RSSDID <span class="sc">==</span>closure_data[i,]<span class="sc">$</span>RSSDID)  ) <span class="sc">&amp;</span>  <span class="co"># or (RSSDHCR == closure_data[i,]$RSSDHCR)</span></span>
+<span id="cb61-37"><a href="#cb61-37" aria-hidden="true" tabindex="-1"></a>                         UNINUMBR <span class="sc">!=</span> closure_data[i,]<span class="sc">$</span>UNINUMBR ]</span>
+<span id="cb61-38"><a href="#cb61-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-39"><a href="#cb61-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-40"><a href="#cb61-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">nrow</span>(temp)<span class="sc">&gt;</span><span class="dv">0</span>) {</span>
+<span id="cb61-41"><a href="#cb61-41" aria-hidden="true" tabindex="-1"></a>    closure_data[i,same_zip_prior_branches<span class="sc">:</span><span class="er">=</span><span class="dv">1</span>]</span>
+<span id="cb61-42"><a href="#cb61-42" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb61-43"><a href="#cb61-43" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb61-44"><a href="#cb61-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-45"><a href="#cb61-45" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> closure_data <span class="sc">%&gt;%</span></span>
+<span id="cb61-46"><a href="#cb61-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(UNINUMBR,yr) <span class="sc">%&gt;%</span></span>
+<span id="cb61-47"><a href="#cb61-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(UNINUMBR) <span class="sc">%&gt;%</span></span>
+<span id="cb61-48"><a href="#cb61-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb61-49"><a href="#cb61-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_same_zip_prior_branches_1 =</span> <span class="fu">lag</span>(same_zip_prior_branches,<span class="dv">1</span>),</span>
+<span id="cb61-50"><a href="#cb61-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_same_zip_prior_branches_2 =</span> <span class="fu">lag</span>(same_zip_prior_branches,<span class="dv">2</span>),</span>
+<span id="cb61-51"><a href="#cb61-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">same_zip_prior_3yr_branches =</span> <span class="fu">ifelse</span>(lag_same_zip_prior_branches_1<span class="sc">==</span><span class="dv">1</span> <span class="sc">|</span> lag_same_zip_prior_branches_2<span class="sc">==</span><span class="dv">1</span> <span class="sc">|</span> same_zip_prior_branches<span class="sc">==</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span> )</span>
+<span id="cb61-52"><a href="#cb61-52" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb61-53"><a href="#cb61-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>lag_same_zip_prior_branches_1,<span class="sc">-</span>lag_same_zip_prior_branches_2,<span class="sc">-</span>lag1_bhc,<span class="sc">-</span>lag1_bank,<span class="sc">-</span>merged_2_year,<span class="sc">-</span>merged_3_year,<span class="sc">-</span>next_year) <span class="sc">%&gt;%</span></span>
+<span id="cb61-54"><a href="#cb61-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> <span class="fu">data.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,zip_vars,<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"zip"</span>,<span class="st">"yr"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"zip"</span>,<span class="st">"yr"</span>))</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,control_df,<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"STCNTYBR"</span>,<span class="st">"yr"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"countycode"</span>,<span class="st">"year"</span>))</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,zbp,<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"zip"</span>,<span class="st">"yr"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"zip"</span>,<span class="st">"year"</span>),<span class="at">all.x=</span>T)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,ruca,<span class="at">by.x=</span><span class="st">"zip"</span>,<span class="at">by.y=</span><span class="st">"ZIP_CODE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>bank_zip_branch_count <span class="ot">&lt;-</span> branch_df[yr <span class="sc">%in%</span> <span class="dv">2014</span><span class="sc">:</span><span class="dv">2024</span>,.(<span class="at">no_branches_in_zipcode=</span>.N),by<span class="ot">=</span>.(RSSDID,zip)]</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,bank_zip_branch_count,<span class="at">by=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"zip"</span>))</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>branch_df[,state<span class="sc">:</span><span class="er">=</span><span class="fu">substr</span>(STCNTYBR,<span class="dv">1</span>,<span class="dv">2</span>)]</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>no_counties_states <span class="ot">&lt;-</span> branch_df[,</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>                                .(<span class="at">no_counties=</span><span class="fu">uniqueN</span>(STCNTYBR),</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">no_states =</span><span class="fu">uniqueN</span>(state)),</span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>                                by<span class="ot">=</span>RSSDID]</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'bank_no_counties_states'</span>]] <span class="ot">&lt;-</span> no_counties_states</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>hhi <span class="ot">&lt;-</span> branch_df[,<span class="fu">c</span>(<span class="st">"DEPSUMBR"</span>,<span class="st">"STCNTYBR"</span>,<span class="st">"yr"</span>)]</span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>hhi[,sum_deposits<span class="sc">:</span><span class="er">=</span><span class="fu">sum</span>(DEPSUMBR),by<span class="ot">=</span>.(STCNTYBR,yr)]</span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>hhi[,mkt_share<span class="sc">:</span><span class="er">=</span>DEPSUMBR<span class="sc">/</span>sum_deposits]</span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>hhi[,mkt_share<span class="sc">:</span><span class="er">=</span>mkt_share<span class="sc">*</span>mkt_share]</span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a>hhi <span class="ot">&lt;-</span> hhi[,.(<span class="at">county_deposit_hhi=</span><span class="fu">sum</span>(mkt_share)<span class="sc">+</span><span class="fl">0.01</span>),by<span class="ot">=</span>.(STCNTYBR,yr)]</span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a>hhi <span class="ot">&lt;-</span> hhi <span class="sc">%&gt;%</span></span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(STCNTYBR) <span class="sc">%&gt;%</span></span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(STCNTYBR,yr) <span class="sc">%&gt;%</span></span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">lag_county_deposit_hhi =</span> <span class="fu">lag</span>(county_deposit_hhi)</span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(STCNTYBR,yr,lag_county_deposit_hhi) <span class="sc">%&gt;%</span></span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a>  data.table</span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-31"><a href="#cb63-31" aria-hidden="true" tabindex="-1"></a>hhi <span class="ot">&lt;-</span> hhi[<span class="sc">!</span><span class="fu">is.na</span>(lag_county_deposit_hhi)]</span>
+<span id="cb63-32"><a href="#cb63-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-33"><a href="#cb63-33" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,hhi,<span class="at">by=</span><span class="fu">c</span>(<span class="st">"STCNTYBR"</span>,<span class="st">"yr"</span>))</span>
+<span id="cb63-34"><a href="#cb63-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-35"><a href="#cb63-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-36"><a href="#cb63-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-37"><a href="#cb63-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a>branch_df[,college_pct<span class="sc">:</span><span class="er">=</span>pct_college_educated<span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb63-39"><a href="#cb63-39" aria-hidden="true" tabindex="-1"></a>branch_df[,has_dividend_income_pct<span class="sc">:</span><span class="er">=</span>dividend_frac<span class="sc">*</span><span class="dv">100</span><span class="sc">+</span><span class="dv">1</span>]</span>
+<span id="cb63-40"><a href="#cb63-40" aria-hidden="true" tabindex="-1"></a>branch_df[,family_income <span class="sc">:</span><span class="er">=</span> median_income<span class="sc">/</span><span class="dv">1000</span>]</span>
+<span id="cb63-41"><a href="#cb63-41" aria-hidden="true" tabindex="-1"></a>branch_df[,age <span class="sc">:</span><span class="er">=</span> median_age]</span>
+<span id="cb63-42"><a href="#cb63-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-43"><a href="#cb63-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-44"><a href="#cb63-44" aria-hidden="true" tabindex="-1"></a>key_chars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"college_pct"</span>,<span class="st">"has_dividend_income_pct"</span>,<span class="st">"family_income"</span>,<span class="st">"age"</span>)</span>
+<span id="cb63-45"><a href="#cb63-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-46"><a href="#cb63-46" aria-hidden="true" tabindex="-1"></a>branch_df[,<span class="fu">paste0</span>(key_chars,<span class="st">"_q"</span>)<span class="sc">:</span><span class="er">=</span><span class="fu">lapply</span>(.SD, <span class="cf">function</span>(x) <span class="fu">ntile</span>(x,<span class="dv">2</span>)),by<span class="ot">=</span>yr,.SDcols <span class="ot">=</span> key_chars]</span>
+<span id="cb63-47"><a href="#cb63-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-48"><a href="#cb63-48" aria-hidden="true" tabindex="-1"></a>branch_df[,sophisticated<span class="sc">:</span><span class="er">=</span><span class="fu">ifelse</span>(college_pct_q<span class="sc">==</span><span class="dv">2</span> <span class="sc">&amp;</span> has_dividend_income_pct_q<span class="sc">==</span><span class="dv">2</span> <span class="sc">&amp;</span> family_income_q<span class="sc">==</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>)]</span>
+<span id="cb63-49"><a href="#cb63-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-50"><a href="#cb63-50" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> branch_df[lag_branch_deposit_amount<span class="sc">&gt;</span><span class="dv">0</span>]</span>
+<span id="cb63-51"><a href="#cb63-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-52"><a href="#cb63-52" aria-hidden="true" tabindex="-1"></a>branch_df[,state_year<span class="sc">:</span><span class="er">=</span><span class="fu">paste</span>(state,yr)]</span>
+<span id="cb63-53"><a href="#cb63-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-54"><a href="#cb63-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-55"><a href="#cb63-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-56"><a href="#cb63-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-57"><a href="#cb63-57" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/dratnadiwakara/depositor-chars/blob/main/bank_branch_visits_count_2019_2022.rds.Rmd</span></span>
+<span id="cb63-58"><a href="#cb63-58" aria-hidden="true" tabindex="-1"></a>branch_visits <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/bank_branch_visits_count_2019_2022.rds'</span>)</span>
+<span id="cb63-59"><a href="#cb63-59" aria-hidden="true" tabindex="-1"></a>branch_visits[,yr<span class="sc">:</span><span class="er">=</span><span class="fu">year</span>(DATE_RANGE_START)]</span>
+<span id="cb63-60"><a href="#cb63-60" aria-hidden="true" tabindex="-1"></a>branch_visits <span class="ot">&lt;-</span> <span class="fu">data.table</span>(branch_visits)</span>
+<span id="cb63-61"><a href="#cb63-61" aria-hidden="true" tabindex="-1"></a>branch_visits <span class="ot">&lt;-</span> branch_visits[yr<span class="sc">==</span><span class="dv">2019</span>,<span class="fu">c</span>(<span class="st">"UNINUMBR"</span>,<span class="st">"MEDIAN_DWELL"</span>,<span class="st">"DISTANCE_FROM_HOME"</span>,<span class="st">"RAW_VISITOR_COUNTS"</span>)]</span>
+<span id="cb63-62"><a href="#cb63-62" aria-hidden="true" tabindex="-1"></a><span class="fu">setnames</span>(branch_visits,<span class="fu">c</span>(<span class="st">"MEDIAN_DWELL"</span>,<span class="st">"DISTANCE_FROM_HOME"</span>,<span class="st">"RAW_VISITOR_COUNTS"</span>),<span class="fu">c</span>(<span class="st">"time_spent_min"</span>,<span class="st">"distance_from_home_km"</span>,<span class="st">"no_of_visitors"</span>))</span>
+<span id="cb63-63"><a href="#cb63-63" aria-hidden="true" tabindex="-1"></a>branch_visits[,distance_from_home_km<span class="sc">:</span><span class="er">=</span>distance_from_home_km<span class="sc">/</span><span class="dv">1000</span>]</span>
+<span id="cb63-64"><a href="#cb63-64" aria-hidden="true" tabindex="-1"></a>branch_visits <span class="ot">&lt;-</span> branch_visits[,.(<span class="at">time_spent_min=</span><span class="fu">mean</span>(time_spent_min,<span class="at">na.rm=</span>T),</span>
+<span id="cb63-65"><a href="#cb63-65" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">distance_from_home_km=</span><span class="fu">mean</span>(distance_from_home_km,<span class="at">na.rm=</span>T),</span>
+<span id="cb63-66"><a href="#cb63-66" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">no_of_visitors=</span><span class="fu">mean</span>(no_of_visitors,<span class="at">na.rm=</span>T)),by<span class="ot">=</span>UNINUMBR]</span>
+<span id="cb63-67"><a href="#cb63-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-68"><a href="#cb63-68" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,branch_visits,<span class="at">by=</span><span class="st">"UNINUMBR"</span>,<span class="at">all.x=</span>T)</span>
+<span id="cb63-69"><a href="#cb63-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-70"><a href="#cb63-70" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,hhi_bank_level,<span class="at">by=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"yr"</span>))</span>
+<span id="cb63-71"><a href="#cb63-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-72"><a href="#cb63-72" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'reg_sample_org'</span>]] <span class="ot">&lt;-</span> <span class="fu">copy</span>(branch_df)</span>
+<span id="cb63-73"><a href="#cb63-73" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'bank_level_data'</span>]] <span class="ot">&lt;-</span> <span class="fu">copy</span>(hhi_bank_level)</span>
+<span id="cb63-74"><a href="#cb63-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-75"><a href="#cb63-75" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(df,<span class="at">file=</span><span class="st">"data/branch_year_data_5_95_wip.rda"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="st">"data/branch_year_data_5_95_wip.rda"</span>)</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> df[[<span class="st">'reg_sample_org'</span>]]</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">setnames</span>(branch_df,<span class="st">"bank_assets.x"</span>,<span class="st">"bank_assets"</span>)</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>hhi_bank_level <span class="ot">&lt;-</span> df[[<span class="st">'bank_level_data'</span>]]</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>key_chars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"college_pct"</span>,<span class="st">"has_dividend_income_pct"</span>,<span class="st">"family_income"</span>,<span class="st">"age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>bank_rural <span class="ot">&lt;-</span> branch_df[,.(<span class="at">bank_ruca =</span> <span class="fu">mean</span>(RUCA1)),by<span class="ot">=</span>.(RSSDID,yr)]</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>branch_df <span class="ot">&lt;-</span> <span class="fu">merge</span>(branch_df,bank_rural,<span class="at">by=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"yr"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add deposit franchise factors </span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>branch_2019 <span class="ot">&lt;-</span> branch_df[yr<span class="sc">==</span><span class="dv">2019</span>,] <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">all_of</span>(<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"DEPSUMBR"</span>,key_chars)))</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>branch_2019[,sum_deposits<span class="sc">:</span><span class="er">=</span><span class="fu">sum</span>(DEPSUMBR,<span class="at">na.rm=</span>T),by<span class="ot">=</span>RSSDID]</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>branch_2019[,deposit_weight<span class="sc">:</span><span class="er">=</span>DEPSUMBR<span class="sc">/</span>sum_deposits]</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>branch_2019 <span class="ot">&lt;-</span> branch_2019[,.(</span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">college_pct =</span> <span class="fu">sum</span>(college_pct<span class="sc">*</span>deposit_weight,<span class="at">na.rm =</span> T)<span class="sc">+</span><span class="dv">1</span>,</span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">has_dividend_income_pct =</span> <span class="fu">sum</span>(has_dividend_income_pct<span class="sc">*</span>deposit_weight,<span class="at">na.rm =</span> T)<span class="sc">+</span><span class="dv">1</span>,</span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">family_income =</span> <span class="fu">sum</span>(family_income<span class="sc">*</span>deposit_weight,<span class="at">na.rm =</span> T)<span class="sc">+</span><span class="dv">1</span>,</span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">sum</span>(age<span class="sc">*</span>deposit_weight,<span class="at">na.rm =</span> T)</span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a>by<span class="ot">=</span>RSSDID]</span>
+<span id="cb66-14"><a href="#cb66-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-15"><a href="#cb66-15" aria-hidden="true" tabindex="-1"></a>x_vars_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"age"</span>,<span class="st">"log(family_income)"</span>,<span class="st">"has_dividend_income_pct"</span>,<span class="st">"college_pct"</span>)</span>
+<span id="cb66-16"><a href="#cb66-16" aria-hidden="true" tabindex="-1"></a>x_vars <span class="ot">&lt;-</span> <span class="fu">paste</span>(x_vars_c,<span class="at">collapse=</span><span class="st">"+"</span>)</span>
+<span id="cb66-17"><a href="#cb66-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-18"><a href="#cb66-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-19"><a href="#cb66-19" aria-hidden="true" tabindex="-1"></a><span class="do">## rate hikes 22-24 </span></span>
+<span id="cb66-20"><a href="#cb66-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-21"><a href="#cb66-21" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/bank_call_report_w_beta_2.rds'</span>) <span class="co"># read-call-report-data.R</span></span>
+<span id="cb66-22"><a href="#cb66-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-23"><a href="#cb66-23" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">merge</span>(call_chg,branch_2019,<span class="at">by.x=</span><span class="st">"ID_RSSD"</span>,<span class="at">by.y =</span> <span class="st">"RSSDID"</span>)</span>
+<span id="cb66-24"><a href="#cb66-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-25"><a href="#cb66-25" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">merge</span>(call_chg,hhi_bank_level[yr<span class="sc">==</span><span class="dv">2019</span>,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"bank_hhi"</span>,<span class="st">"bank_assets"</span>)],<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"ID_RSSD"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>))</span>
+<span id="cb66-26"><a href="#cb66-26" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">merge</span>(call_chg,bank_rural[yr<span class="sc">==</span><span class="dv">2019</span>,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"bank_ruca"</span>)],<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"ID_RSSD"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>))</span>
+<span id="cb66-27"><a href="#cb66-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-28"><a href="#cb66-28" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> call_chg[bank_assets <span class="sc">&gt;</span> <span class="fl">100e6</span> <span class="sc">|</span> (core_deposits_chg<span class="sc">&gt;</span><span class="fu">quantile</span>(call_chg<span class="sc">$</span>core_deposits_chg,<span class="fl">0.05</span>) <span class="sc">&amp;</span></span>
+<span id="cb66-29"><a href="#cb66-29" aria-hidden="true" tabindex="-1"></a>                       core_deposits_chg <span class="sc">&lt;</span> <span class="fu">quantile</span>(call_chg<span class="sc">$</span>core_deposits_chg,<span class="fl">0.95</span>) <span class="sc">&amp;</span></span>
+<span id="cb66-30"><a href="#cb66-30" aria-hidden="true" tabindex="-1"></a>                       deposit_exp_deposits_chg<span class="sc">&gt;</span><span class="fu">quantile</span>(call_chg<span class="sc">$</span>deposit_exp_deposits_chg,<span class="fl">0.05</span>) <span class="sc">&amp;</span></span>
+<span id="cb66-31"><a href="#cb66-31" aria-hidden="true" tabindex="-1"></a>                       deposit_exp_deposits_chg <span class="sc">&lt;</span> <span class="fu">quantile</span>(call_chg<span class="sc">$</span>deposit_exp_deposits_chg,<span class="fl">0.95</span>))]</span>
+<span id="cb66-32"><a href="#cb66-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-33"><a href="#cb66-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-34"><a href="#cb66-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-35"><a href="#cb66-35" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'bank_sample_22_24'</span>]] <span class="ot">&lt;-</span> <span class="fu">copy</span>(call_chg)</span>
+<span id="cb66-36"><a href="#cb66-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-37"><a href="#cb66-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-38"><a href="#cb66-38" aria-hidden="true" tabindex="-1"></a>r_univar_exp <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb66-39"><a href="#cb66-39" aria-hidden="true" tabindex="-1"></a>r_univar_dep <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb66-40"><a href="#cb66-40" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x_vars_c)) {</span>
+<span id="cb66-41"><a href="#cb66-41" aria-hidden="true" tabindex="-1"></a>  r_univar_exp[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"deposit_exp_deposits_chg~"</span>,x_vars_c[i],<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb66-42"><a href="#cb66-42" aria-hidden="true" tabindex="-1"></a>  r_univar_dep[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"core_deposits_chg~"</span>,x_vars_c[i],<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb66-43"><a href="#cb66-43" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb66-44"><a href="#cb66-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-45"><a href="#cb66-45" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'univar_regs_dep_22_24'</span>]] <span class="ot">&lt;-</span> r_univar_dep</span>
+<span id="cb66-46"><a href="#cb66-46" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'univar_regs_exp_22_24'</span>]] <span class="ot">&lt;-</span> r_univar_exp</span>
+<span id="cb66-47"><a href="#cb66-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-48"><a href="#cb66-48" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb66-49"><a href="#cb66-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-50"><a href="#cb66-50" aria-hidden="true" tabindex="-1"></a>r[[<span class="st">'exp_reg'</span>]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"deposit_exp_deposits_chg~"</span>,x_vars,<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb66-51"><a href="#cb66-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-52"><a href="#cb66-52" aria-hidden="true" tabindex="-1"></a>r[[<span class="st">'core_dep_reg'</span>]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"core_deposits_chg~"</span>,x_vars,<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb66-53"><a href="#cb66-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-54"><a href="#cb66-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-55"><a href="#cb66-55" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'pooled_regs_22_24'</span>]] <span class="ot">&lt;-</span> r</span>
+<span id="cb66-56"><a href="#cb66-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-57"><a href="#cb66-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-58"><a href="#cb66-58" aria-hidden="true" tabindex="-1"></a>branch_df[,pred_int_exp_chg_22_24<span class="sc">:</span><span class="er">=</span><span class="fu">predict</span>(r[[<span class="st">'exp_reg'</span>]],<span class="at">newdata =</span> branch_df)]</span>
+<span id="cb66-59"><a href="#cb66-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-60"><a href="#cb66-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-61"><a href="#cb66-61" aria-hidden="true" tabindex="-1"></a>branch_df[,pred_core_dep_chg_22_24<span class="sc">:</span><span class="er">=</span><span class="fu">predict</span>(r[[<span class="st">'core_dep_reg'</span>]],<span class="at">newdata =</span> branch_df)]</span>
+<span id="cb66-62"><a href="#cb66-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-63"><a href="#cb66-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-64"><a href="#cb66-64" aria-hidden="true" tabindex="-1"></a>reg_sample <span class="ot">&lt;-</span> branch_df[<span class="fu">is.finite</span>(pred_int_exp_chg_22_24) <span class="sc">&amp;</span> <span class="fu">is.finite</span>(pred_core_dep_chg_22_24)]</span>
+<span id="cb66-65"><a href="#cb66-65" aria-hidden="true" tabindex="-1"></a>reg_sample[,est_df_factor_pooled_22_24<span class="sc">:</span><span class="er">=</span>(<span class="dv">1</span><span class="sc">+</span>pred_core_dep_chg_22_24<span class="sc">/</span><span class="dv">400</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>pred_int_exp_chg_22_24<span class="sc">/</span><span class="dv">4</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="fl">1.04</span><span class="sc">^</span><span class="dv">10</span>)))] <span class="co"># -0.02/0.04</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="do">## rate hikes 16-19</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'data/bank_call_report_w_beta_2015_2019.rds'</span>) <span class="co"># read-call-report-data.R</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">merge</span>(call_chg,branch_2019,<span class="at">by.x=</span><span class="st">"ID_RSSD"</span>,<span class="at">by.y =</span> <span class="st">"RSSDID"</span>)</span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">merge</span>(call_chg,hhi_bank_level[yr<span class="sc">==</span><span class="dv">2019</span>,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"bank_hhi"</span>,<span class="st">"bank_assets"</span>)],<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"ID_RSSD"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>))</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> <span class="fu">merge</span>(call_chg,bank_rural[yr<span class="sc">==</span><span class="dv">2019</span>,<span class="fu">c</span>(<span class="st">"RSSDID"</span>,<span class="st">"bank_ruca"</span>)],<span class="at">by.x=</span><span class="fu">c</span>(<span class="st">"ID_RSSD"</span>),<span class="at">by.y=</span><span class="fu">c</span>(<span class="st">"RSSDID"</span>))</span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>call_chg <span class="ot">&lt;-</span> call_chg[bank_assets <span class="sc">&gt;</span> <span class="fl">100e6</span> <span class="sc">|</span> (core_deposits_chg<span class="sc">&gt;</span><span class="fu">quantile</span>(call_chg<span class="sc">$</span>core_deposits_chg,<span class="fl">0.05</span>) <span class="sc">&amp;</span> </span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>                       core_deposits_chg <span class="sc">&lt;</span> <span class="fu">quantile</span>(call_chg<span class="sc">$</span>core_deposits_chg,<span class="fl">0.95</span>) <span class="sc">&amp;</span></span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a>                       deposit_exp_deposits_chg<span class="sc">&gt;</span><span class="fu">quantile</span>(call_chg<span class="sc">$</span>deposit_exp_deposits_chg,<span class="fl">0.05</span>) <span class="sc">&amp;</span> </span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>                       deposit_exp_deposits_chg <span class="sc">&lt;</span> <span class="fu">quantile</span>(call_chg<span class="sc">$</span>deposit_exp_deposits_chg,<span class="fl">0.95</span>))]</span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-18"><a href="#cb67-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-19"><a href="#cb67-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-20"><a href="#cb67-20" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'bank_sample_16_19'</span>]] <span class="ot">&lt;-</span> <span class="fu">copy</span>(call_chg)</span>
+<span id="cb67-21"><a href="#cb67-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-22"><a href="#cb67-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-23"><a href="#cb67-23" aria-hidden="true" tabindex="-1"></a>r_univar_exp <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb67-24"><a href="#cb67-24" aria-hidden="true" tabindex="-1"></a>r_univar_dep <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb67-25"><a href="#cb67-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x_vars_c)) {</span>
+<span id="cb67-26"><a href="#cb67-26" aria-hidden="true" tabindex="-1"></a>  r_univar_exp[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"deposit_exp_deposits_chg~"</span>,x_vars_c[i],<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb67-27"><a href="#cb67-27" aria-hidden="true" tabindex="-1"></a>  r_univar_dep[[i]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"core_deposits_chg~"</span>,x_vars_c[i],<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb67-28"><a href="#cb67-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb67-29"><a href="#cb67-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-30"><a href="#cb67-30" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'univar_regs_dep_16_19'</span>]] <span class="ot">&lt;-</span> r_univar_dep</span>
+<span id="cb67-31"><a href="#cb67-31" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'univar_regs_exp_16_19'</span>]] <span class="ot">&lt;-</span> r_univar_exp</span>
+<span id="cb67-32"><a href="#cb67-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-33"><a href="#cb67-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-34"><a href="#cb67-34" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb67-35"><a href="#cb67-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-36"><a href="#cb67-36" aria-hidden="true" tabindex="-1"></a>r[[<span class="st">'exp_reg'</span>]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"deposit_exp_deposits_chg~"</span>,x_vars,<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb67-37"><a href="#cb67-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-38"><a href="#cb67-38" aria-hidden="true" tabindex="-1"></a>r[[<span class="st">'core_dep_reg'</span>]] <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">paste0</span>(<span class="st">"core_deposits_chg~"</span>,x_vars,<span class="st">"+bank_hhi+log(bank_assets)+bank_ruca"</span>),<span class="at">data=</span>call_chg)</span>
+<span id="cb67-39"><a href="#cb67-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-40"><a href="#cb67-40" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'pooled_regs_16_19'</span>]] <span class="ot">&lt;-</span> r</span>
+<span id="cb67-41"><a href="#cb67-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-42"><a href="#cb67-42" aria-hidden="true" tabindex="-1"></a>reg_sample[,pred_int_exp_chg_16_19<span class="sc">:</span><span class="er">=</span><span class="fu">predict</span>(r[[<span class="st">'exp_reg'</span>]],<span class="at">newdata =</span> reg_sample)]</span>
+<span id="cb67-43"><a href="#cb67-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-44"><a href="#cb67-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-45"><a href="#cb67-45" aria-hidden="true" tabindex="-1"></a>reg_sample[,pred_core_dep_chg_16_19<span class="sc">:</span><span class="er">=</span><span class="fu">predict</span>(r[[<span class="st">'core_dep_reg'</span>]],<span class="at">newdata =</span> reg_sample)]</span>
+<span id="cb67-46"><a href="#cb67-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-47"><a href="#cb67-47" aria-hidden="true" tabindex="-1"></a>reg_sample[,est_df_factor_pooled_16_19<span class="sc">:</span><span class="er">=</span>(<span class="dv">1</span><span class="sc">+</span>pred_core_dep_chg_16_19<span class="sc">/</span><span class="dv">250</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>pred_int_exp_chg_16_19<span class="sc">/</span><span class="fl">2.5</span>)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span>(<span class="fl">1.025</span><span class="sc">^</span><span class="dv">10</span>)))] <span class="co">#-0.02/0.025</span></span>
+<span id="cb67-48"><a href="#cb67-48" aria-hidden="true" tabindex="-1"></a><span class="co"># reg_sample[,branch_deposit_amount:=DEPSUMBR]</span></span>
+<span id="cb67-49"><a href="#cb67-49" aria-hidden="true" tabindex="-1"></a><span class="co"># reg_sample[,bank_year:=paste(RSSDID,yr)]</span></span>
+<span id="cb67-50"><a href="#cb67-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-51"><a href="#cb67-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-52"><a href="#cb67-52" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'reg_sample'</span>]] <span class="ot">&lt;-</span> <span class="fu">copy</span>(reg_sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(df,<span class="at">file=</span><span class="st">"data/branch_year_data_5_95_2.rda"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
